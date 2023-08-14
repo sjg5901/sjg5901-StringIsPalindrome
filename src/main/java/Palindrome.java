@@ -12,6 +12,20 @@ public class Palindrome {
      * @return true if str is a palindrome, false otherwise.
      */
     public boolean pal(String str){
-        return false;
+
+        int left = 0;
+        int right = str.length() - 1;
+
+        //char[] letters = str.toCharArray();
+    
+        // could also check equals condition, although not needed 
+        // left only ever equals right if they refer to the same char in the string
+
+        while (left < right) {
+            if (str.charAt(left) != str.charAt(right)) return false;
+            left++; right--;
+        }
+
+        return true;
     }
 }
